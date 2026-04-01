@@ -1,0 +1,78 @@
+{
+    "bilbao": {
+        "temperatura": 12,
+        "humedad": 94
+    },
+    "a-coruna": {
+        "temperatura": 13,
+        "humedad": 82
+    },
+    "oviedo": {
+        "temperatura": 11,
+        "humedad": 82
+    },
+    "palma": {
+        "temperatura": 23,
+        "humedad": 53
+    },
+    "santa-cruz-de-tenerife": {
+        "temperatura": 20,
+        "humedad": 64
+    },
+    "palomares-del-rio": {
+        "temperatura": 20,
+        "humedad": 43
+    },
+    "pilas": {
+        "temperatura": 19,
+        "humedad": 39
+    },
+    "bollullos-de-la-mitacion": {
+        "temperatura": 18,
+        "humedad": 45
+    },
+    "castilleja-de-la-cuesta": {
+        "temperatura": 20,
+        "humedad": 43
+    },
+    "almensilla": {
+        "temperatura": 18,
+        "humedad": 50
+    },
+    "bormujos": {
+        "temperatura": 20,
+        "humedad": 43
+    },
+    "espartinas": {
+        "temperatura": 18,
+        "humedad": 45
+    },
+    "sanlucar-la-mayor": {
+        "temperatura": 18,
+        "humedad": 44
+    },
+    "umbrete": {
+        "temperatura": 18,
+        "humedad": 45
+    },
+    "olivares": {
+        "temperatura": 18,
+        "humedad": 46
+    },
+    "benacazon": {
+        "temperatura": 18,
+        "humedad": 45
+    },
+    "huevar-del-aljarafe": {
+        "temperatura": 19,
+        "humedad": 45
+    },
+    "carrion-de-los-cespedes": {
+        "temperatura": 18,
+        "humedad": 48
+    },
+    "castilleja-del-campo": {
+        "temperatura": 18,
+        "humedad": 48
+    }
+}
