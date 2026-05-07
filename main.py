@@ -90,8 +90,8 @@ for pueblo in tercer_filtro:
 
 # # Capa 2b Guardo las temperaturas 
 
-# with open(f'registro_{hora_guardado}.json','w') as f:
-#  json.dump(dic_resultados,f,indent=4)
+with open(f'registro_{hora_guardado}.json','w') as f:
+ json.dump(dic_resultados,f,indent=4)
 
 
 
