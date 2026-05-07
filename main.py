@@ -63,11 +63,7 @@ for nombre_pueblo in primer_filtro:
             if n_parte not in provincias:
                 n_arreglado=n_arreglado+n_parte+'-'      
         
-
-
-           
-
-    segundo_filtro.append(n_arreglado[:-1])
+            segundo_filtro.append(n_arreglado[:-1])
 
 
 tercer_filtro=[i for i in segundo_filtro if i]## con la compresion de lista si i = cadena vacia entonces es false lo cual lo saca de la lista
@@ -94,8 +90,8 @@ for pueblo in tercer_filtro:
 
 # # Capa 2b Guardo las temperaturas 
 
-with open(f'registro_{hora_guardado}.json','w') as f:
- json.dump(dic_resultados,f,indent=4)
+# with open(f'registro_{hora_guardado}.json','w') as f:
+#  json.dump(dic_resultados,f,indent=4)
 
 
 
