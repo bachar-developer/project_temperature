@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 documento=pd.read_csv('clientes.csv',sep=';',header=None,)
 cp=documento[4].dropna().astype(str).unique()
-pueblos=documento[5].dropna().astype(str).unique()
+pueblos1=documento[5].dropna().astype(str).unique()
 
 cp_limpios=[]
 
@@ -33,7 +33,7 @@ provincias = [
 
 primer_filtro=[]##normaliza el dato quitando acentos etc 
 
-for pueblo in pueblos:
+for pueblo in pueblos1:
     pueblo_normalizado=""
     n_pueblo=pueblo.strip().replace(' ','-').lower()
     for letra in n_pueblo:
@@ -63,7 +63,7 @@ for nombre_pueblo in primer_filtro:
             if n_parte not in provincias:
                 n_arreglado=n_arreglado+n_parte+'-'      
         
-            segundo_filtro.append(n_arreglado[:-1])
+    segundo_filtro.append(n_arreglado[:-1])
 
 
 tercer_filtro=[i for i in segundo_filtro if i]## con la compresion de lista si i = cadena vacia entonces es false lo cual lo saca de la lista
@@ -81,10 +81,10 @@ for pueblo in tercer_filtro:
     
     response=rq.get(f'https://www.eltiempo.es/{pueblo}.html')## peticion al inspeccionar 
     posicion_t=response.text.find('ºC')##busco la posicion mediante find 
-    temperatura=int(response.text[posicion_t+len('ºC')-4:posicion_t+len('ºC')-2])##concentro la busqueda en lo que me interesa de la temperatura
+    temperatura=(response.text[posicion_t+len('ºC')-4:posicion_t+len('ºC')-2])##concentro la busqueda en lo que me interesa de la temperatura
     temperaturas.append(temperatura)
     posicion_h=response.text.find('humidity')##busco la humedad
-    humedad=int(response.text[posicion_h+11:posicion_h+13])##concentro la busqueda en la humedad 
+    humedad=(response.text[posicion_h+11:posicion_h+13])##concentro la busqueda en la humedad 
     humedad_p.append(humedad)
     dic_resultados[pueblo]={'temperatura':temperatura ,'humedad':humedad}##guardo todo en un diccionario interno
 
@@ -98,9 +98,10 @@ with open(f'registro_{hora_guardado}.json','w') as f:
 ### capa 3 Relacionar pueblos y datos meteorologicos
 pueblos=[]
 for pueblo in tercer_filtro:
+    temp=[]
     if '-' in pueblo:
-        n_pueblo=pueblo.replace('-',' ').title()
-        pueblos.append(n_pueblo)
+        temp_pueblo=pueblo.replace('-',' ').title()
+        pueblos.append(temp_pueblo)
     elif '-' not in pueblo:
         pueblos.append(pueblo.capitalize())
 
@@ -112,4 +113,3 @@ plt.title('TEMPERATURAS DEL ALJARAFE')
 plt.xlabel('Temperaturas',loc='center')
 plt.ylabel('Pueblos')
 plt.show()
-
